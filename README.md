@@ -11,9 +11,13 @@ Text-to-Speech with your own voice.
 - [telepot](https://github.com/nickoala/telepot)
 - [aiotg](https://github.com/szastupov/aiotg)
 
+## Bot API
+- https://core.telegram.org/bots/api
+- https://groosha.gitbooks.io/telegram-bot-lessons/content/chapter7.html
+
 ## Фонетика
-http://tutrus.com/fonetika/zvuki-i-bukvy
-http://tutrus.com/fonetika/foneticheskaya-shpargalka
+- http://tutrus.com/fonetika/zvuki-i-bukvy
+- http://tutrus.com/fonetika/foneticheskaya-shpargalka
 
 - "Ь перед гласным" заменяется на пробел
 - "Ъ" заменяется на пробел
