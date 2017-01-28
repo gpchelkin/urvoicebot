@@ -19,6 +19,7 @@ Text-to-Speech with your own voice.
 - http://tutrus.com/fonetika/zvuki-i-bukvy
 - http://tutrus.com/fonetika/foneticheskaya-shpargalka
 
+### Алгоритм
 - "Ь перед гласным" заменяется на пробел
 - "Ъ" заменяется на пробел
 - мягкие гласные после согласных заменяются на "Ь + твердый гласный"
