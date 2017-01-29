@@ -2,8 +2,9 @@
 Text-to-Speech with your own voice.
 
 - [pydub](https://github.com/jiaaro/pydub) для работы с аудио, умеет ogg (формат голосовых сообщений Telegram)
-- [API](https://github.com/jiaaro/pydub/blob/master/API.markdown)
+- [pydub API](https://github.com/jiaaro/pydub/blob/master/API.markdown)
 - [pydub.silence](https://github.com/jiaaro/pydub/blob/master/pydub/silence.py)
+- [pydub.effects](https://github.com/jiaaro/pydub/blob/master/pydub/effects.py)
 
 ## Telegram Bot API Libraries
 - [_pyTelegramBotAPI_](https://github.com/eternnoir/pyTelegramBotAPI)
