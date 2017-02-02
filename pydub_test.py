@@ -71,7 +71,6 @@ def initialize(user_id):
             print(sound, "not saved")
 
 
-
 def transcribe(input_string=""):
     string = input_string.upper()
 
@@ -108,11 +107,13 @@ def main():
     if user_id in db:
         del db[user_id]
     initialize(user_id)
-    string = open("string_test.txt").read()
+    with open('string_test.txt') as f:
+        phrase = f.read().strip()
+
     if not os.path.exists("result"):
         os.mkdir("result")
-    print(string)
-    vocalize(user_id, string).export("result/" + string[:32] + ".ogg", format="ogg")
+    print('Phrase: "{0}"'.format(phrase))
+    vocalize(user_id, phrase).export("result/" + phrase[:32] + ".ogg", format="ogg")
     time2 = time.clock()
     print(time2-time1)
 
