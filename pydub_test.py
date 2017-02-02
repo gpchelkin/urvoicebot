@@ -39,6 +39,7 @@ replacement = {
 
 db = shelve.open('db', writeback=True)
 
+
 def initialize(user_id):
     db[user_id] = {}
     db[user_id]["sounds"] = {}
@@ -53,9 +54,9 @@ def initialize(user_id):
     db[user_id]["sounds"]["!"][0] = AudioSegment.silent(duration=420)
     db[user_id]["sounds"]["\n"][0] = AudioSegment.silent(duration=420)
 
-    os.chdir(user_id)
-    for filename in glob.glob("*.ogg"):
-        sound = filename[0]
+    for filename in glob.glob("{dir}/*.ogg".format(dir=user_id)):
+        # Get one symbol: "whatever/У.ogg" -> "У"
+        sound = filename[-5:-4]
         audio = AudioSegment.from_ogg(filename)
         index = len(db[user_id]["sounds"][sound])
         chunks = silence.split_on_silence(audio,
@@ -68,8 +69,6 @@ def initialize(user_id):
             db[user_id]["sounds"][sound][index] = save
         else:
             print(sound, "not saved")
-
-    os.chdir("..")
 
 
 
