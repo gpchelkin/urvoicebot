@@ -94,10 +94,9 @@ ENV/
 # IDE
 .idea
 
-/db.dat
-/db.dir
-/db.bak
-/string_test.txt
-/mystuff.txt
-/gpchelkin/
-/result/
+db.*
+phrase.txt
+phrases.txt
+gpchelkin/
+result/
+result2/

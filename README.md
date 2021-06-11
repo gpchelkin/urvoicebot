@@ -1,22 +1,12 @@
 # urvoicebot
-Text-to-Speech with your own voice.
+Russian text-to-speech with your own voice.
 
-- [pydub](https://github.com/jiaaro/pydub) для работы с аудио, умеет ogg (формат голосовых сообщений Telegram)
+- [pydub](https://github.com/jiaaro/pydub) для работы с аудио, умеет Ogg - формат голосовых сообщений Telegram
 - [pydub API](https://github.com/jiaaro/pydub/blob/master/API.markdown)
 - [pydub.silence](https://github.com/jiaaro/pydub/blob/master/pydub/silence.py)
 - [pydub.effects](https://github.com/jiaaro/pydub/blob/master/pydub/effects.py)
 
-## Telegram Bot API Libraries
-- [_pyTelegramBotAPI_](https://github.com/eternnoir/pyTelegramBotAPI)
-- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
-- [telepot](https://github.com/nickoala/telepot)
-- [aiotg](https://github.com/szastupov/aiotg)
-
-### Bot API
-- https://core.telegram.org/bots/api
-- https://groosha.gitbooks.io/telegram-bot-lessons/content/chapter7.html
-
-## Фонетика
+## Справка по фонетике
 - http://tutrus.com/fonetika/zvuki-i-bukvy
 - http://tutrus.com/fonetika/foneticheskaya-shpargalka
 
@@ -29,18 +19,18 @@ Text-to-Speech with your own voice.
 - Гласные звуки (6): `А, О, У, И, Ы, Э`
 - Согласные звуки (36): `Б, Б’, В, В’, Г, Г’, Д, Д’, Ж, З, З’, Й’, К, К’, Л, Л’, М, М’, Н, Н’, П, П’, Р, Р’, С, С’, Т, Т’, Ф, Ф’, Х, Х’, Ц, Ч’, Ш, Щ’`
 
-#### Перекодированные звуки (42):
+#### Звуки в коде (42):
 `А, Б, b, В, v, Г, g, Д, d, Ж, З, z, И, Й, К, k, Л, l, М, m, Н, n, О, П, p, Р, r, С, s, Т, t, У, Ф, f, Х, h, Ц, Ч, Ш, Щ, Ы, Э`
 
-### Алгоритм превращения строки в транскрипцию
+### Алгоритм превращения строки (буквы) в транскрипцию (звуки)
 1. "Ь + И" -> "Ь + Й + И"
   - `чьи -> чьйи`
 - "Ж, Ц, Ш (всегда твердые) + И" -> "Ж, Ц, Ш + Ы"
   - `цирк -> цырк`
-- "согласная кроме Й, Ч, Щ (кроме всегда мягких) + Е, Ё, Ю, Я, И" -> "согласная + Ь + Э, О, У, А, И"
+- "согласная кроме Й, Ч, Щ (кроме всегда мягких) + Е, Ё, Ю, Я, И" -> "согласный + Ь + Э, О, У, А, И"
   - `привет -> прьивьэт`
 - "Й, Ч, Щ (всегда мягкие) + Е, Ё, Ю, Я, И" -> "Й, Ч, Щ + Э, О, У, А, И"
-- "пробел, гласная, Ъ, Ь + Е, Ё, Ю, Я" -> "пробел, гласная, Ъ, Ь + Й + Э, О, У, А"
+- "пробел, гласная, Ъ, Ь + Е, Ё, Ю, Я" -> "пробел, гласный, Ъ, Ь + Й + Э, О, У, А"
   - `ёж -> йож`
   - `вьюга -> вьйуга`
   - `подъезд -> подъйэзд`
@@ -49,6 +39,6 @@ Text-to-Speech with your own voice.
 - "Й, Ж, Ц, Ч, Ш, Щ (всегда твердые и всегда мягкие) + Ь"  -> "Й, Ж, Ц, Ч, Ш, Щ (тот же символ)"
   - `тьишь -> tиш`
   - `чьйи -> чйи`
-- "согласная кроме Й, Ж, Ц, Ч, Ш, Щ (всегда твердых и всегда мягких) + Ь"  -> "согласный мягкий (транслит)"
+- "согласная кроме Й, Ж, Ц, Ч, Ш, Щ (всегда твердых и всегда мягких) + Ь"  -> "согласный мягкий (транслит символа)"
   - `прьивьэт -> пrиvэт`
 - удалить все оставшиеся "Ь, Ъ"

@@ -1,2 +1,1 @@
-pydub
-pyTelegramBotAPI
+pydub==0.25.1
